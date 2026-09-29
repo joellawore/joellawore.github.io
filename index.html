@@ -1,36 +1,336 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joel Lawore</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Joel Lawore — Computer Science + Mathematics at Tufts University. Selected work in systems, performance engineering, machine learning, and software development." />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Joel Lawore — Technical Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Joel Lawore</h1>
-        <p>Computer Science + Mathematics at Tufts University.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <h2>Projects</h2>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Joel Lawore home">JL</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#case-studies">Case studies</a>
+        <a href="assets/joel-lawore-resume.pdf">Resume</a>
+        <a href="https://github.com/joellawore" rel="me">GitHub</a>
+        <a href="https://www.linkedin.com/in/joellawore" rel="me">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
 
-        <article>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Science + Mathematics @ Tufts University</p>
+          <h1>Joel Lawore</h1>
+          <p class="lede">I build and optimize systems, data pipelines, and machine-learning models — especially where performance, evaluation, and real-world constraints matter.</p>
+          <div class="hero-actions" aria-label="Portfolio links">
+            <a class="button button-primary" href="#projects">View projects</a>
+            <a class="button" href="assets/joel-lawore-resume.pdf">Resume</a>
+          </div>
+          <div class="contact-row">
+            <a href="mailto:joellawore@gmail.com">joellawore@gmail.com</a>
+            <span aria-hidden="true">/</span>
+            <span>Recruiting for 2027 full-time SWE / FDE roles</span>
+          </div>
+        </div>
+
+        <aside class="signal-panel" aria-label="Technical focus">
+          <p class="signal-label">Technical focus</p>
+          <div class="signal-item">
+            <span>Systems + performance</span>
+            <strong>C / C++ / SML</strong>
+          </div>
+          <div class="signal-item">
+            <span>Applied machine learning</span>
+            <strong>Python / scikit-learn</strong>
+          </div>
+          <div class="signal-item">
+            <span>Software delivery</span>
+            <strong>Git / Docker / CI/CD</strong>
+          </div>
+          <p class="signal-note">Two summers of engineering and enterprise-AI work at Wabtec. Full experience in the resume.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Projects with real technical signal.</h2>
+          </div>
+          <p>Chosen for depth, engineering decisions, measurable outcomes, and breadth across systems, ML, and product work.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-card-featured">
+            <div class="project-meta">
+              <span class="tag">Standard ML</span>
+              <span class="tag">Interpreters</span>
+              <span class="tag">Performance</span>
+            </div>
             <h3>uScheme Interpreter Optimization</h3>
-            <p>
-                Implemented recursive free-variable analysis across the language
-                AST and filtered closure environments to retain only referenced
-                bindings, reducing interpreter runtime by 74%.
-            </p>
+            <p>Optimized closure creation by analyzing free variables across the language AST and retaining only bindings a lambda could actually reference.</p>
+            <div class="metric-row" aria-label="Project result">
+              <div><strong>5.14s → 1.35s</strong><span>benchmark runtime</span></div>
+              <div><strong>74%</strong><span>runtime reduction</span></div>
+            </div>
+            <a class="text-link" href="#uscheme">Read case study <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card project-card-featured">
+            <div class="project-meta">
+              <span class="tag">C</span>
+              <span class="tag">Callgrind</span>
+              <span class="tag">Computer architecture</span>
+            </div>
+            <h3>Universal Machine Performance Optimization</h3>
+            <p>Profiled and reworked an unfamiliar 32-bit virtual-machine implementation, changing data representations and execution structure to remove overhead and improve locality.</p>
+            <div class="highlight-line"><strong>Key signal:</strong> profiling → hypothesis → representation change → assembly-level validation.</div>
+            <a class="text-link" href="#um-profile">Read case study <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="tag">NLP</span>
+              <span class="tag">scikit-learn</span>
+            </div>
+            <h3>Readability Classification</h3>
+            <p>Built a text-classification pipeline combining character 3–5-gram TF-IDF with 28 readability and stylometric features.</p>
+            <div class="highlight-line"><strong>Key signal:</strong> caught optimistic validation caused by same-book passages crossing folds, then moved to author/title-grouped CV.</div>
+            <a class="text-link" href="#readability">Read case study <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="tag">Image features</span>
+              <span class="tag">Gradient boosting</span>
+            </div>
+            <h3>Skin-Lesion Classification</h3>
+            <p>Combined clinical metadata with engineered image features, using patient-grouped evaluation and class weighting on a heavily imbalanced dataset.</p>
+            <div class="metric-row compact">
+              <div><strong>107</strong><span>total features</span></div>
+              <div><strong>92.4%</strong><span>positive rate</span></div>
+            </div>
+            <a class="text-link" href="#skin-lesion">Read case study <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="tag">C++</span>
+              <span class="tag">Hash tables</span>
+              <span class="tag">Filesystem traversal</span>
+            </div>
+            <h3>Gerp — File Search Utility</h3>
+            <p>Indexed text across recursive directory trees with a custom templated hash table using linear probing and rehashing, then exposed case-sensitive and case-insensitive CLI search.</p>
+            <p class="privacy-note">Source kept private in accordance with course policy.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="tag">CSS</span>
+              <span class="tag">Stylus</span>
+              <span class="tag">UI systems</span>
+            </div>
+            <h3>Tufts SIS Modern</h3>
+            <p>Designed a modular, reversible visual modernization layer for Tufts’ legacy PeopleSoft SIS while preserving existing behavior and navigation.</p>
+            <div class="highlight-line"><strong>Architecture:</strong> core design tokens plus separate navigation, dashboard, table, form, dark-mode, and experimental modules.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="case-studies">
+      <div class="shell">
+        <div class="section-heading on-dark">
+          <div>
+            <p class="eyebrow">Case studies</p>
+            <h2>How the engineering decisions actually worked.</h2>
+          </div>
+          <p>These are intentionally implementation-focused without publishing restricted course solutions.</p>
+        </div>
+
+        <article class="case-study" id="uscheme">
+          <div class="case-title">
+            <div>
+              <p class="case-kicker">01 / Programming languages + performance</p>
+              <h3>uScheme Interpreter Optimization</h3>
+            </div>
+            <div class="case-stat"><strong>3.8×</strong><span>faster on the assignment benchmark</span></div>
+          </div>
+
+          <div class="case-grid">
+            <div>
+              <h4>Problem</h4>
+              <p>The interpreter created closures by carrying the surrounding environment. That is semantically safe, but potentially wasteful when a lambda references only a small subset of those bindings.</p>
+            </div>
+            <div>
+              <h4>What changed</h4>
+              <p>Implemented recursive free-variable analysis over the expression tree, including binding forms, nested lambdas, mutation, control flow, and function application. Closure creation then filtered the captured environment to bindings proven relevant to the lambda.</p>
+            </div>
+            <div>
+              <h4>Engineering process</h4>
+              <p>Added targeted checks around free-variable behavior, integrated the analysis at closure creation, and benchmarked the modified interpreter against the original source implementation.</p>
+            </div>
+            <div>
+              <h4>Result + signal</h4>
+              <p>Runtime fell from <strong>5.14 seconds to 1.35 seconds</strong> on the assignment benchmark — a ~74% reduction. The project demonstrates interpreter internals, lexical scope, recursive AST analysis, and performance optimization without changing language semantics.</p>
+            </div>
+          </div>
+
+          <div class="flow" role="img" aria-label="Expression AST flows through free-variable analysis, environment filtering, then optimized closure creation">
+            <span>Expression AST</span><i>→</i><span>Free-variable analysis</span><i>→</i><span>Filter environment</span><i>→</i><span>Closure</span>
+          </div>
+          <p class="privacy-note on-dark-note">Source kept private in accordance with course policy.</p>
         </article>
 
-        <article>
-            <h3>Universal Machine Performance Optimization</h3>
-            <p>
-                Profiled and optimized a 32-bit virtual machine using Callgrind,
-                representation changes, memory-layout improvements, and
-                assembly-level inspection.
-            </p>
+        <article class="case-study" id="um-profile">
+          <div class="case-title">
+            <div>
+              <p class="case-kicker">02 / Systems + performance engineering</p>
+              <h3>Universal Machine Performance Optimization</h3>
+            </div>
+            <div class="case-stat"><strong>C + Callgrind</strong><span>profiling-guided optimization</span></div>
+          </div>
+
+          <div class="case-grid">
+            <div>
+              <h4>Problem</h4>
+              <p>Start with an unfamiliar Universal Machine implementation and make it faster without changing its instruction semantics. The initial design relied on higher-overhead container abstractions for frequently accessed runtime state.</p>
+            </div>
+            <div>
+              <h4>Technical decisions</h4>
+              <p>Progressively moved segment and reusable-ID representations from Hanson sequences to UArrays and then flatter arrays, and consolidated execution paths to reduce indirection and improve locality.</p>
+            </div>
+            <div>
+              <h4>Debugging + validation</h4>
+              <p>A consolidation pass unexpectedly exhausted stack space after moving state into local scope; the fix was to allocate the large runtime state on the heap. Callgrind identified instruction dispatch as the dominant hot path, and generated assembly confirmed the compiler lowered the opcode switch to a jump table with frequently used state kept largely in registers.</p>
+            </div>
+            <div>
+              <h4>What it demonstrates</h4>
+              <p>Performance work as an evidence loop: profile first, change representation based on a bottleneck hypothesis, debug secondary effects, then inspect machine-level behavior rather than assuming the compiler did what the source suggested.</p>
+            </div>
+          </div>
+
+          <div class="flow" role="img" aria-label="Profile, form hypothesis, change representation, validate, repeat">
+            <span>Profile</span><i>→</i><span>Hypothesis</span><i>→</i><span>Representation change</span><i>→</i><span>Assembly validation</span>
+          </div>
+          <p class="privacy-note on-dark-note">Team project. Source kept private in accordance with course policy.</p>
         </article>
-    </main>
+
+        <article class="case-study" id="readability">
+          <div class="case-title">
+            <div>
+              <p class="case-kicker">03 / ML evaluation + NLP</p>
+              <h3>Readability Classification</h3>
+            </div>
+            <div class="case-stat"><strong>28 + TF-IDF</strong><span>engineered + text features</span></div>
+          </div>
+
+          <div class="case-grid">
+            <div>
+              <h4>Problem</h4>
+              <p>Classify literary passages into two reading-level groups from text plus computed readability and stylometric metadata.</p>
+            </div>
+            <div>
+              <h4>Model</h4>
+              <p>The final pipeline used character-level 3–5-gram TF-IDF alongside 28 numerical features, standardized the numeric branch, and trained logistic regression.</p>
+            </div>
+            <div>
+              <h4>The important discovery</h4>
+              <p>Ordinary 10-fold validation produced a mean AUROC around 0.82, but inspection showed that passages from the same book could land in both training and validation folds. That made the model partly answer “have I seen this work before?” instead of the intended reading-level question.</p>
+            </div>
+            <div>
+              <h4>Evaluation redesign</h4>
+              <p>Rebuilt validation around groups defined by <strong>author + title</strong> using stratified group folds, so no literary work crossed the train/validation boundary. The lower, more variable grouped scores were treated as more trustworthy than the prettier leaked result.</p>
+            </div>
+          </div>
+          <p class="privacy-note on-dark-note">Course project. Source kept private; no assignment solution code is published here.</p>
+        </article>
+
+        <article class="case-study" id="skin-lesion">
+          <div class="case-title">
+            <div>
+              <p class="case-kicker">04 / Applied ML + multimodal features</p>
+              <h3>Skin-Lesion Classification</h3>
+            </div>
+            <div class="case-stat"><strong>0.923</strong><span>best mean grouped-CV overall AUROC</span></div>
+          </div>
+
+          <div class="case-grid">
+            <div>
+              <h4>Problem</h4>
+              <p>Predict a binary skin-lesion target from patient metadata plus smartphone images. The training data contained 1,178 examples and a severe 92.4% positive-class imbalance.</p>
+            </div>
+            <div>
+              <h4>Feature design</h4>
+              <p>Combined 55 processed tabular features with 52 hand-engineered image features: channel statistics, center-vs-border color, symmetry, grayscale/texture proxies, and coarse RGB histograms.</p>
+            </div>
+            <div>
+              <h4>Evaluation + model selection</h4>
+              <p>Used patient ID as the cross-validation group so the same patient could not leak across folds, balanced training weights, and searched 120 HistGradientBoosting configurations. Selection considered both overall AUROC and the weakest age-group AUROC.</p>
+            </div>
+            <div>
+              <h4>Result + signal</h4>
+              <p>The best grouped-CV configuration reached a mean overall AUROC of <strong>0.923</strong> and a mean minimum age-group AUROC of <strong>0.794</strong>. The project demonstrates multimodal feature engineering, leakage-aware evaluation, imbalance handling, and subgroup-aware model selection.</p>
+            </div>
+          </div>
+          <p class="privacy-note on-dark-note">Course project. Source kept private; dataset attribution and assignment materials are not redistributed here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="more-work">
+      <div class="shell more-grid">
+        <div>
+          <p class="eyebrow">Additional systems work</p>
+          <h2>Broader low-level foundation.</h2>
+          <p class="section-copy">The portfolio leads with the projects above, but the underlying coursework also spans virtual machines, compression, assembly, interpreters, cache locality, and binary data representation.</p>
+        </div>
+        <div class="chip-grid" aria-label="Additional project topics">
+          <span>32-bit Universal Machine in C</span>
+          <span>PPM image compression + bit packing</span>
+          <span>UM assembly RPN calculator</span>
+          <span>Huffman compression in C++</span>
+          <span>Typed RPN interpreter in C++</span>
+          <span>Cache-locality experiments</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="shell contact-card">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Interested in the work?</h2>
+          <p>I’m recruiting for 2027 full-time software engineering, forward-deployed engineering, and related technical roles.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:joellawore@gmail.com">Email me</a>
+          <a class="button" href="https://github.com/joellawore">GitHub</a>
+          <a class="button" href="https://www.linkedin.com/in/joellawore">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>Joel Lawore</span>
+      <span>Computer Science + Mathematics, Tufts University</span>
+    </div>
+  </footer>
 </body>
 </html>
