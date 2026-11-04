@@ -1,4 +1,6 @@
-# Portfolio redesign review
+# Portfolio redesign review — first revision
+
+Historical report for the first redesign. The current brief and implementation have since changed; see the [personal-home review](./personal-home-review.md). Statements below describe the repository and measurements at the time of the first review, not its current Git or deployment state.
 
 Review date: November 4, 2026. Local preview: <http://127.0.0.1:4173/>.
 

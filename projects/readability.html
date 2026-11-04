@@ -4,14 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A literary readability classifier using TF-IDF and engineered features, with author/title-grouped validation to prevent same-book leakage.">
-  <meta name="theme-color" content="#f7f4ed">
+  <meta name="theme-color" content="#f5f0e6">
   <title>Readability classification — Joel Lawore</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header shell"><a class="brand" href="../index.html">Joel Lawore</a><nav class="nav" aria-label="Primary navigation"><a href="../work.html" aria-current="location">Work</a><a href="../about.html">About</a><a href="../assets/joel-lawore-resume.pdf">Résumé</a></nav></header>
+  <header class="site-header shell"><a class="brand" href="../index.html">Joel Lawore</a><nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../work.html" aria-current="location">Work</a>
+      <a href="../notes.html">Notes</a>
+    </nav></header>
   <main id="main" class="shell case" tabindex="-1">
     <div class="page-intro"><a class="breadcrumb" href="../work.html">← All work</a><h1>Readability classification</h1><p class="lede">The most useful result was finding a flaw in the evaluation.</p><p class="project-meta">Machine learning · Python · scikit-learn · Course project</p></div>
     <section class="case-section" aria-labelledby="problem"><h2 id="problem">The task</h2><div><p>Classify literary passages into two reading-level groups using the text and computed readability and stylometric features.</p></div></section>
@@ -23,6 +27,13 @@
     <section class="case-section" aria-labelledby="result"><h2 id="result">What changed</h2><div><p>I rebuilt validation around groups defined by author and title. The grouped scores were lower and more variable, but provided a more defensible evaluation.</p><p class="note">The approximately 0.82 AUROC reflects the original evaluation’s same-book leakage. It should not be treated as performance on unseen works. No aggregate grouped score is reported here.</p><p class="note">Source remains private in accordance with course policy.</p></div></section>
     <div class="case-end"><a href="../work.html">← All work</a><a href="uscheme.html">Next: uScheme optimization →</a></div>
   </main>
-  <footer class="site-footer shell"><a href="mailto:joellawore@gmail.com">Email Joel</a><p>Tufts University · Available in 2027</p></footer>
+  <footer class="site-footer shell">
+    <nav class="footer-links" aria-label="Contact and profiles">
+      <a href="mailto:joellawore@gmail.com">Email</a>
+      <a href="../assets/joel-lawore-resume.pdf">Résumé <span class="file-type">(PDF)</span></a>
+      <a href="https://github.com/joellawore" rel="me">GitHub</a>
+      <a href="https://www.linkedin.com/in/joellawore" rel="me">LinkedIn</a>
+    </nav>
+  </footer>
 </body>
 </html>
