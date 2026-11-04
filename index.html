@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Joel Lawore — Computer Science + Mathematics at Tufts University. Selected work in systems, performance engineering, machine learning, and software development." />
-  <meta name="theme-color" content="#0b1020" />
+  <meta name="theme-color" content="#10291e" />
   <title>Joel Lawore — Technical Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
@@ -17,6 +17,7 @@
       <a class="brand" href="#top" aria-label="Joel Lawore home">JL</a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#case-studies">Case studies</a>
         <a href="assets/joel-lawore-resume.pdf">Resume</a>
         <a href="https://github.com/joellawore" rel="me">GitHub</a>
@@ -29,9 +30,9 @@
     <section class="hero" id="top">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Computer Science + Mathematics @ Tufts University</p>
+          <p class="eyebrow">Engineer / systems, ML, and product-minded automation</p>
           <h1>Joel Lawore</h1>
-          <p class="lede">I build and optimize systems, data pipelines, and machine-learning models — especially where performance, evaluation, and real-world constraints matter.</p>
+          <p class="lede">I work on the difficult middle ground between an idea and a dependable system: profiling what is slow, measuring what is true, and shipping tools people can use.</p>
           <div class="hero-actions" aria-label="Portfolio links">
             <a class="button button-primary" href="#projects">View projects</a>
             <a class="button" href="assets/joel-lawore-resume.pdf">Resume</a>
@@ -43,21 +44,25 @@
           </div>
         </div>
 
-        <aside class="signal-panel" aria-label="Technical focus">
-          <p class="signal-label">Technical focus</p>
-          <div class="signal-item">
-            <span>Systems + performance</span>
-            <strong>C / C++ / SML</strong>
+        <aside class="signal-panel" aria-label="Selected proof points">
+          <p class="signal-label">Selected proof points</p>
+          <div class="proof-point">
+            <strong>74%</strong>
+            <span>interpreter runtime reduction</span>
           </div>
           <div class="signal-item">
-            <span>Applied machine learning</span>
-            <strong>Python / scikit-learn</strong>
+            <span>Professional experience</span>
+            <strong>Wabtec · 2025–26</strong>
           </div>
           <div class="signal-item">
-            <span>Software delivery</span>
-            <strong>Git / Docker / CI/CD</strong>
+            <span>Core languages</span>
+            <strong>Python / C / C++</strong>
           </div>
-          <p class="signal-note">Two summers of engineering and enterprise-AI work at Wabtec. Full experience in the resume.</p>
+          <div class="signal-item">
+            <span>Working style</span>
+            <strong>Measure → reason → ship</strong>
+          </div>
+          <p class="signal-note">Computer Science + Mathematics at Tufts University. Recruiting for 2027 full-time SWE / FDE roles.</p>
         </aside>
       </div>
     </section>
@@ -149,6 +154,42 @@
             <div class="highlight-line"><strong>Architecture:</strong> core design tokens plus separate navigation, dashboard, table, form, dark-mode, and experimental modules.</div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section experience-section" id="experience">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2>Work that made the theory useful.</h2>
+          </div>
+          <p>Two summers at Wabtec, moving between software engineering, enterprise AI, and the practical work of making a solution operational.</p>
+        </div>
+
+        <div class="experience-list">
+          <article class="experience-item">
+            <div class="experience-date">Jun 2026 — Jul 2026</div>
+            <div class="experience-body">
+              <p class="experience-company">Wabtec Corporation</p>
+              <h3>Lead IT Intern · Enterprise AI &amp; Customer Service Transformation</h3>
+              <p>Built a configurable Python framework around Salesforce APIs and a ground-truth benchmark of approximately 150 cases across 15 representatives, establishing a repeatable process for measuring AI classification accuracy.</p>
+              <p>Productionized the data and ML pipeline with GitLab CI/CD, Dockerized SQL dependencies, scheduled runner execution, secure API credential handling, and automated uploads to SQL for Power BI visualization.</p>
+            </div>
+            <div class="experience-tools">Python / ML<br />Salesforce APIs<br />GitLab CI/CD / Docker</div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-date">May 2025 — Aug 2025</div>
+            <div class="experience-body">
+              <p class="experience-company">Wabtec Corporation</p>
+              <h3>Engineering Intern · Software Engineering</h3>
+              <p>Built Python workflow automation synchronizing issue status, ownership, and workflow data between ClearQuest and GitLab, then transitioned the solution to a full-time engineer.</p>
+              <p>Prototyped a Docker-based local integration-testing framework and diagnosed three defects in C microservices deployed through Docker and integrated with DDS.</p>
+            </div>
+            <div class="experience-tools">Python / C<br />Docker / DDS<br />ClearQuest / GitLab</div>
+          </article>
+        </div>
+        <p class="experience-footnote">Also a Teaching Assistant for Tufts CS105: Programming Languages, leading office hours and grading for a course of 150+ students.</p>
       </div>
     </section>
 
