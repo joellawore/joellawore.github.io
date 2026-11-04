@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Optimizing uScheme closure environments with free-variable analysis. Assignment benchmark runtime: 5.14 seconds to 1.35 seconds.">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>uScheme optimization — Joel Lawore</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell">
+    <a class="brand" href="../index.html">Joel Lawore</a>
+    <nav class="nav" aria-label="Primary navigation"><a href="../work.html" aria-current="location">Work</a><a href="../about.html">About</a><a href="../assets/joel-lawore-resume.pdf">Résumé</a></nav>
+  </header>
+  <main id="main" class="shell case" tabindex="-1">
+    <div class="page-intro">
+      <a class="breadcrumb" href="../work.html">← All work</a>
+      <h1>uScheme optimization</h1>
+      <p class="lede">Keeping only the environment a closure actually needs.</p>
+      <p class="project-meta">Programming languages · Standard ML · Course project</p>
+    </div>
+    <section class="case-section" aria-labelledby="problem">
+      <h2 id="problem">The problem</h2>
+      <div><p>The interpreter created closures by carrying the surrounding environment. That preserves lexical scope, but retains bindings a lambda may never reference.</p><p>The goal was to reduce that overhead while preserving the language’s behavior.</p></div>
+    </section>
+    <section class="case-section" aria-labelledby="approach">
+      <h2 id="approach">The approach</h2>
+      <div>
+        <p>I implemented recursive free-variable analysis over the expression tree, covering binding forms, nested lambdas, mutation, control flow, and function application. Closure creation then filtered the captured environment to the bindings relevant to that lambda.</p>
+        <figure>
+          <div class="process">
+            <div><span>01 / Analyze</span><strong>Expression tree</strong><small>Find the lambda’s free variables.</small></div>
+            <div><span>02 / Retain</span><strong>Referenced bindings</strong><small>Filter the surrounding environment.</small></div>
+            <div><span>03 / Create</span><strong>Smaller closure</strong><small>Preserve lexical scope.</small></div>
+          </div>
+          <figcaption>A conceptual view of closure creation, without reproducing the course implementation.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="case-section" aria-labelledby="measurement">
+      <h2 id="measurement">Measurement</h2>
+      <div>
+        <p>I added targeted checks for free-variable behavior and compared the modified interpreter with the original source implementation.</p>
+        <table class="results"><caption class="note">Runtime on the assignment benchmark</caption><thead><tr><th scope="col">Implementation</th><th scope="col">Runtime</th></tr></thead><tbody><tr><th scope="row">Original</th><td>5.14 s</td></tr><tr><th scope="row">Filtered closure environments</th><td>1.35 s</td></tr></tbody></table>
+        <p class="note">Approximately 74% less runtime on the assignment benchmark. Hardware details and run-to-run variance are not available, so this result should be treated as specific to that benchmark.</p>
+      </div>
+    </section>
+    <section class="case-section" aria-labelledby="constraints">
+      <h2 id="constraints">Constraints</h2>
+      <div><p>The optimization depends on correct handling of scope and binding throughout the expression tree. Reducing the captured environment must not remove a binding the lambda can reference.</p><p class="note">Source remains private in accordance with course policy.</p></div>
+    </section>
+    <div class="case-end"><a href="../work.html">← All work</a><a href="sis-modern.html">Next: Tufts SIS Modern →</a></div>
+  </main>
+  <footer class="site-footer shell"><a href="mailto:joellawore@gmail.com">Email Joel</a><p>Tufts University · Available in 2027</p></footer>
+</body>
+</html>

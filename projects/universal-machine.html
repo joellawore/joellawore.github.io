@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Profiling a 32-bit Universal Machine in C: representation changes, memory allocation, and assembly-level validation with Callgrind.">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>Universal Machine — Joel Lawore</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell"><a class="brand" href="../index.html">Joel Lawore</a><nav class="nav" aria-label="Primary navigation"><a href="../work.html" aria-current="location">Work</a><a href="../about.html">About</a><a href="../assets/joel-lawore-resume.pdf">Résumé</a></nav></header>
+  <main id="main" class="shell case" tabindex="-1">
+    <div class="page-intro"><a class="breadcrumb" href="../work.html">← All work</a><h1>Universal Machine</h1><p class="lede">Using profiling to guide changes in a 32-bit virtual machine.</p><p class="project-meta">Systems · C · Callgrind · Team course project</p></div>
+    <section class="case-section" aria-labelledby="problem"><h2 id="problem">The problem</h2><div><p>Improve an unfamiliar Universal Machine implementation without changing its instruction semantics. Frequently accessed runtime state initially relied on higher-overhead container abstractions.</p></div></section>
+    <section class="case-section" aria-labelledby="changes"><h2 id="changes">The changes</h2><div><p>We progressively moved segment and reusable-ID representations from Hanson sequences to UArrays and then flatter arrays. Consolidating execution paths reduced indirection and improved locality.</p><p>A consolidation pass unexpectedly exhausted stack space after moving state into local scope. Allocating the large runtime state on the heap resolved that issue.</p></div></section>
+    <section class="case-section" aria-labelledby="validation"><h2 id="validation">Validation</h2><div><p>Callgrind identified instruction dispatch as the dominant hot path. Inspection of generated assembly confirmed that the compiler lowered the opcode switch to a jump table and kept frequently used state largely in registers.</p><p>The process connected a profiling observation to a representation change, then checked what the compiler actually emitted.</p><p class="note">No numeric speedup is claimed here. This was a team project; source remains private in accordance with course policy.</p></div></section>
+    <div class="case-end"><a href="../work.html">← All work</a><a href="uscheme.html">Related: uScheme optimization →</a></div>
+  </main>
+  <footer class="site-footer shell"><a href="mailto:joellawore@gmail.com">Email Joel</a><p>Tufts University · Available in 2027</p></footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A literary readability classifier using TF-IDF and engineered features, with author/title-grouped validation to prevent same-book leakage.">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>Readability classification — Joel Lawore</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell"><a class="brand" href="../index.html">Joel Lawore</a><nav class="nav" aria-label="Primary navigation"><a href="../work.html" aria-current="location">Work</a><a href="../about.html">About</a><a href="../assets/joel-lawore-resume.pdf">Résumé</a></nav></header>
+  <main id="main" class="shell case" tabindex="-1">
+    <div class="page-intro"><a class="breadcrumb" href="../work.html">← All work</a><h1>Readability classification</h1><p class="lede">The most useful result was finding a flaw in the evaluation.</p><p class="project-meta">Machine learning · Python · scikit-learn · Course project</p></div>
+    <section class="case-section" aria-labelledby="problem"><h2 id="problem">The task</h2><div><p>Classify literary passages into two reading-level groups using the text and computed readability and stylometric features.</p></div></section>
+    <section class="case-section" aria-labelledby="model"><h2 id="model">The model</h2><div><p>The final pipeline combined character-level 3–5-gram TF-IDF with 28 numerical features. I standardized the numeric branch and trained logistic regression.</p><p>The text and numerical branches provided two representations of each passage: character patterns and explicit readability and style measurements.</p></div></section>
+    <section class="case-section" aria-labelledby="evaluation"><h2 id="evaluation">The evaluation</h2><div>
+      <p>Ordinary 10-fold cross-validation produced a mean AUROC of about 0.82. On inspection, passages from the same book could appear in both training and validation folds.</p><p>That overlap made the estimate optimistic: the model could partly recognize a work it had already seen instead of generalizing to an unfamiliar work.</p>
+      <figure><div class="process"><div><span>01 / Group</span><strong>Author + title</strong><small>Keep passages from one work together.</small></div><div><span>02 / Split</span><strong>Stratified group folds</strong><small>No work crosses the boundary.</small></div><div><span>03 / Evaluate</span><strong>Unseen works</strong><small>Measure the intended task.</small></div></div><figcaption>The revised validation boundary is the literary work, rather than the individual passage.</figcaption></figure>
+    </div></section>
+    <section class="case-section" aria-labelledby="result"><h2 id="result">What changed</h2><div><p>I rebuilt validation around groups defined by author and title. The grouped scores were lower and more variable, but provided a more defensible evaluation.</p><p class="note">The approximately 0.82 AUROC reflects the original evaluation’s same-book leakage. It should not be treated as performance on unseen works. No aggregate grouped score is reported here.</p><p class="note">Source remains private in accordance with course policy.</p></div></section>
+    <div class="case-end"><a href="../work.html">← All work</a><a href="uscheme.html">Next: uScheme optimization →</a></div>
+  </main>
+  <footer class="site-footer shell"><a href="mailto:joellawore@gmail.com">Email Joel</a><p>Tufts University · Available in 2027</p></footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tufts SIS Modern: a modular, reversible visual modernization layer for the PeopleSoft student information system.">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>Tufts SIS Modern — Joel Lawore</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell"><a class="brand" href="../index.html">Joel Lawore</a><nav class="nav" aria-label="Primary navigation"><a href="../work.html" aria-current="location">Work</a><a href="../about.html">About</a><a href="../assets/joel-lawore-resume.pdf">Résumé</a></nav></header>
+  <main id="main" class="shell case" tabindex="-1">
+    <div class="page-intro"><a class="breadcrumb" href="../work.html">← All work</a><h1>Tufts SIS Modern</h1><p class="lede">Updating a familiar student tool without replacing how it works.</p><p class="project-meta">Interface design · CSS · Stylus</p></div>
+    <section class="case-section" aria-labelledby="problem"><h2 id="problem">The problem</h2><div><p>Tufts’ student information system runs on PeopleSoft. I designed a visual modernization layer for the legacy interface while preserving its existing behavior and navigation.</p><p>The constraint shaped the project: improve presentation through a reversible styling layer.</p></div></section>
+    <section class="case-section" aria-labelledby="design"><h2 id="design">The design</h2><div>
+      <p>The architecture separates core design tokens from modules for navigation, dashboards, tables, forms, dark mode, and experimental changes.</p>
+      <figure><div class="process"><div><span>Foundation</span><strong>Core tokens</strong><small>Shared visual definitions.</small></div><div><span>Presentation</span><strong>Separate modules</strong><small>Navigation, tables, forms, and more.</small></div><div><span>Constraint</span><strong>Existing behavior</strong><small>Preserve the underlying SIS.</small></div></div><figcaption>Architecture summary. The visual layer is modular and reversible.</figcaption></figure>
+    </div></section>
+    <section class="case-section" aria-labelledby="decisions"><h2 id="decisions">Key decisions</h2><div><ul><li>Keep shared styling in core tokens rather than repeat definitions across individual screens.</li><li>Separate interface areas into modules so changes remain localized.</li><li>Keep experimental styles separate from the core presentation layer.</li></ul></div></section>
+    <section class="case-section" aria-labelledby="limits"><h2 id="limits">Scope &amp; limits</h2><div><p>The styling layer leaves PeopleSoft’s application logic and navigation in place. It can change how the interface looks, but cannot change the underlying application’s behavior.</p><p class="note">The architecture diagram describes the design; it does not establish a measured improvement in usability or performance.</p></div></section>
+    <div class="case-end"><a href="../work.html">← All work</a><a href="readability.html">Next: Readability classification →</a></div>
+  </main>
+  <footer class="site-footer shell"><a href="mailto:joellawore@gmail.com">Email Joel</a><p>Tufts University · Available in 2027</p></footer>
+</body>
+</html>
